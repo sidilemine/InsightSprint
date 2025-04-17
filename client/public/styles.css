@@ -1,0 +1,287 @@
+/* 
+* Jade Kite - Rapid Consumer Sentiment Analysis
+* Custom CSS Styles
+*/
+
+/* Global Styles */
+:root {
+    --primary-color: #4e2a84; /* Purple - primary brand color */
+    --secondary-color: #00a86b; /* Jade green - secondary brand color */
+    --accent-color: #f8c630; /* Gold accent */
+    --dark-color: #333333;
+    --light-color: #f8f9fa;
+    --text-color: #495057;
+    --white-color: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.divider {
+    max-width: 3.25rem;
+    border-width: 0.2rem;
+    border-color: var(--secondary-color);
+}
+
+/* Navigation */
+#mainNav {
+    background-color: var(--white-color);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease;
+}
+
+#mainNav .navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover,
+#mainNav .navbar-nav .nav-item .nav-link:active {
+    color: var(--secondary-color);
+}
+
+/* Header/Masthead */
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('../img/hero-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+}
+
+.masthead h1 {
+    font-size: 3rem;
+    color: var(--white-color);
+    margin-bottom: 1.5rem;
+}
+
+.masthead h2 {
+    font-size: 1.8rem;
+    color: var(--white-color);
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white-color);
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--secondary-color), 10%);
+    border-color: darken(var(--secondary-color), 10%);
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.card-subtitle {
+    font-weight: 500;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    background: var(--secondary-color);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.timeline-marker {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-content {
+    width: 45%;
+    padding: 1.5rem;
+    background: var(--white-color);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border-radius: 0.5rem;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: auto;
+}
+
+/* Implementation Timeline */
+.implementation-timeline {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.phase {
+    background-color: var(--white-color);
+    border-left: 4px solid var(--secondary-color);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.phase h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Tech Flow Diagram */
+.tech-flow-diagram {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--white-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* Footer */
+footer {
+    color: var(--white-color);
+}
+
+footer h5 {
+    margin-bottom: 1.5rem;
+}
+
+.social-icons a {
+    color: var(--white-color);
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .masthead h1 {
+        font-size: 2.5rem;
+    }
+    
+    .masthead h2 {
+        font-size: 1.5rem;
+    }
+    
+    .section-heading {
+        font-size: 2rem;
+    }
+    
+    .timeline::before {
+        left: 2rem;
+    }
+    
+    .timeline-marker {
+        left: 2rem;
+    }
+    
+    .timeline-content {
+        width: 80%;
+        margin-left: 3rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .masthead {
+        height: 75vh;
+    }
+    
+    .masthead h1 {
+        font-size: 2rem;
+    }
+    
+    .masthead h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Animation Effects */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+.slide-in-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+.slide-in-left.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.slide-in-right {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+.slide-in-right.visible {
+    transform: translateX(0);
+    opacity: 1;
+}

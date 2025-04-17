@@ -1,0 +1,48 @@
+digraph G {
+  rankdir=LR;
+  node [shape=box, style=filled, fillcolor=lightblue, fontname="Arial", fontsize=12];
+  edge [fontname="Arial", fontsize=10];
+  
+  // Main components
+  Voiceform [fillcolor="#a8d5ba", label="Voiceform\nCore Platform"];
+  HumeAI [fillcolor="#ffb6c1", label="Hume AI\nEmotion Analysis"];
+  GeminiAPI [fillcolor="#ffd700", label="Gemini API\nText Analysis"];
+  Airtable [fillcolor="#add8e6", label="Airtable\nData Storage"];
+  Insight7 [fillcolor="#d8bfd8", label="Insight7\nVisualization"];
+  
+  // Data flow
+  Voiceform -> HumeAI [label="Voice\nRecordings"];
+  Voiceform -> GeminiAPI [label="Transcripts"];
+  HumeAI -> GeminiAPI [label="Emotion\nData"];
+  GeminiAPI -> Airtable [label="Analysis\nResults"];
+  Airtable -> Insight7 [label="Structured\nData"];
+  
+  // Output
+  Insight7 -> Reports [shape=note, fillcolor="#f0f0f0", label="Actionable\nInsights"];
+  
+  // Subgraph for data collection
+  subgraph cluster_0 {
+    label="Data Collection";
+    style=filled;
+    fillcolor="#f5f5f5";
+    Voiceform;
+  }
+  
+  // Subgraph for analysis
+  subgraph cluster_1 {
+    label="Analysis";
+    style=filled;
+    fillcolor="#f5f5f5";
+    HumeAI;
+    GeminiAPI;
+  }
+  
+  // Subgraph for storage and visualization
+  subgraph cluster_2 {
+    label="Storage & Visualization";
+    style=filled;
+    fillcolor="#f5f5f5";
+    Airtable;
+    Insight7;
+  }
+}
